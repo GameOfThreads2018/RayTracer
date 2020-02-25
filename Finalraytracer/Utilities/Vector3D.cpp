@@ -32,13 +32,11 @@ Vector3D::~Vector3D(void)
 
 double Vector3D::length(void)
 {
-	return sqrt(x * x + y * y + z * z);
+	return sqrt(this->lenSquared());
 }
 
 void Vector3D::normalize(void)
 {
 	double magnitude = length();
-	this->x /= magnitude;
-	this->y /= magnitude;
-	this->z /= magnitude;
+	this /= magnitude;
 }

@@ -19,6 +19,7 @@ public:
 	Point3D operator*(const double a);
 	Point3D operator+(const Vector3D& v);
 	Point3D operator-(const Vector3D& v);
+	double lenSquared(void);
 	double dotProduct(const Point3D& p);
 	double dotProduct(const Vector3D& v);
 	double distance(void);
@@ -56,6 +57,10 @@ public:
 	inline Point3D operator-(const Vector3D& v)
 	{
 		return Point3D(x - v.x, y - v.y, z - v.z);
+	}
+	inline double lenSquared(void)
+	{
+		return x * x + y * y + z * z;
 	}
 };
 #endif

@@ -35,5 +35,5 @@ Point3D::~Point3D(void)
 
 double Point3D::distance(void)
 {
-	return sqrt(x * x + y * y + z * z);
+	return sqrt(this->lenSquared());
 }

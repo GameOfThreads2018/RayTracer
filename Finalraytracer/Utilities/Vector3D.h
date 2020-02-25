@@ -21,6 +21,7 @@ public:
 	Vector3D operator*=(const double a);
 	Vector3D operator/=(const double a);
 	double dotProduct(const Vector3D& vec);
+	double lenSquared(void);
 	double length(void);
 	void normalize(void);
 
@@ -77,6 +78,10 @@ public:
 	inline double dotProduct(const Vector3D& vec)
 	{
 		return (x * vec.x + y * vec.y + z * vec.z);
+	}
+	inline double lenSquared(void)
+	{
+		return x * x + y * y + z * z;
 	}
 };
 #endif
