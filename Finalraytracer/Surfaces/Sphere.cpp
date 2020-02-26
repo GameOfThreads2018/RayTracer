@@ -2,14 +2,15 @@
 
 Sphere::Sphere()
 {
-
 }
+
 Sphere::Sphere(const Point3D center, const float radius, const float a)
 {
 	setCenter(center);
 	setRadius(radius);
 	this->a = a;
 }
+
 bool Sphere::hit(Ray& ray)
 {
 	float a, b, c;
@@ -23,35 +24,43 @@ bool Sphere::hit(Ray& ray)
 	{
 		setT(one);
 	}
+
 	if(discrim >= 0)
 	{
 		return true;
 	}
+
 	else 
 	{
 		return false;
 	}
 }
+
 void Sphere::setRadius(const float _radius)
 {
 	this->radius = _radius;
 }
+
 void Sphere::setCenter(const Point3D _center)
 {
 	this->center = _center;
 }
+
 float Sphere::getRadius() const
 {
-	return this->raduis;
+	return this->radius;
 }
+
 Point3D Sphere::getCenter() const
 {
 	return this->center;
 }
+
 void Sphere::setT(float _t)
 {
 	this->t =_t;
 }
+
 float Sphere::getT()
 {
 	return this->t;
