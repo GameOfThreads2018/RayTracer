@@ -12,16 +12,6 @@ public:
 	Vector3D(const Vector3D& v);
 	~Vector3D(void);
 
-	Vector3D operator+(const Vector3D& vec);
-	Vector3D operator-(const Vector3D& vec);
-	Vector3D operator*(const double a);
-	Vector3D operator/(const double a);
-	Vector3D operator+=(const Vector3D& vec);
-	Vector3D operator-=(const Vector3D& vec);
-	Vector3D operator*=(const double a);
-	Vector3D operator/=(const double a);
-	double dotProduct(const Vector3D& vec);
-	double lenSquared(void);
 	double length(void);
 	void normalize(void);
 
@@ -45,12 +35,6 @@ public:
 		return (Vector3D(x / a, y / a, z / a));
 	}
 
-	inline Vector3D operator+=(const Vector3D& vec)
-	{
-		x += vec.x; y += vec.y; z += vec.z;
-		return (*this);
-	}
-
 	inline Vector3D operator-=(const Vector3D& vec)
 	{
 		x -= vec.x; y -= vec.y; z -= vec.z;
@@ -59,7 +43,9 @@ public:
 
 	inline Vector3D operator+=(const Vector3D& vec)
 	{
-		x += vec.x; y += vec.y; z += vec.z;
+		x += vec.x;
+		y += vec.y;
+		z += vec.z;
 		return (*this);
 	}
 

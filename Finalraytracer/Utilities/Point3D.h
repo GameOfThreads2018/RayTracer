@@ -14,14 +14,6 @@ public:
 	Point3D(const Point3D& p);
 	~Point3D(void);
 
-	Point3D operator+(const Point3D& p);
-	Point3D operator-(const Point3D& p);
-	Point3D operator*(const double a);
-	Point3D operator+(const Vector3D& v);
-	Point3D operator-(const Vector3D& v);
-	double lenSquared(void);
-	double dotProduct(const Point3D& p);
-	double dotProduct(const Vector3D& v);
 	double distance(void);
 
 	inline double dotProduct(const Point3D& p)

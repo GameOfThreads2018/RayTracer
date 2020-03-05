@@ -1,8 +1,10 @@
 #ifndef __SPHERE__
 #define __SPHERE__
-#include "Point3D.h"
-#include "Normal.h"
-#include "Ray.h"
+
+#include "Utilities\Point3D.h"
+#include "Utilities\Normal.h"
+#include "Utilities\Ray.h"
+#include "Surface.h"
 class Sphere : public Surface
 {
 private:
@@ -12,6 +14,7 @@ private:
 public:
 	Sphere();
 	Sphere(const Point3D center, const float radius, const float a);
+	~Sphere();
 	virtual bool hit(Ray& ray);
 	void setRadius(float _radius);
 	void setCenter(Point3D center);
@@ -19,5 +22,5 @@ public:
 	float getT();
 	float getRadius() const;
 	Point3D getCenter() const;
-
 };
+#endif

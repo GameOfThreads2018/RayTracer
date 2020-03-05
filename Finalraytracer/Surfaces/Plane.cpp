@@ -1,7 +1,6 @@
 #include "Plane.h"
 Plane::Plane()
 {
-
 }
 
 Plane::Plane(const Point3D _point, const Normal& _normal, const float _a)
@@ -9,6 +8,10 @@ Plane::Plane(const Point3D _point, const Normal& _normal, const float _a)
 	setPoint(_point);
 	setNormal(_normal);
 	a =_a;
+}
+
+Plane::~Plane()
+{
 }
 
 void Plane::setNormal(const Normal normal)

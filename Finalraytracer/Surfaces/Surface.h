@@ -1,7 +1,7 @@
 #pragma once
 #ifndef __SURFACE__
 #define __SURFACE__
-#include "Ray.h"
+#include "Utilities/Ray.h"
 class Surface {
 	Surface(void);
 	virtual ~Surface(void);

@@ -11,6 +11,10 @@ Sphere::Sphere(const Point3D center, const float radius, const float a)
 	this->a = a;
 }
 
+Sphere::~Sphere()
+{
+}
+
 bool Sphere::hit(Ray& ray)
 {
 	float a, b, c;

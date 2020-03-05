@@ -8,11 +8,6 @@ public:
 	Normal(void);
 	Normal(double x, double y, double z);
 	~Normal(void);
-	Normal operator- (void) const;
-	Normal operator+ (const Normal& n) const;
-	Normal& operator+= (const Normal& n);
-	Normal operator* (const double a) const;
-	double dotProduct(const Vector3D& v);
 	void normalize(void);
 
 	inline Normal operator-(void) const
