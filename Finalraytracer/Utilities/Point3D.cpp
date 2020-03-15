@@ -8,14 +8,14 @@ Point3D::Point3D(void) {
 	z = 0.0;
 }
 
-Point3D::Point3D(const double a)
+Point3D::Point3D(const float a)
 {
 	x = a;
 	y = a;
 	z = a;
 }
 
-Point3D::Point3D(double _x, double _y, double _z)
+Point3D::Point3D(float _x, float _y, float _z)
 {
 	x = _x;
 	y = _y;
@@ -33,7 +33,7 @@ Point3D::~Point3D(void)
 {}
 
 
-double Point3D::distance(void)
+float Point3D::distance(void)
 {
 	return sqrt(this->lenSquared());
 }

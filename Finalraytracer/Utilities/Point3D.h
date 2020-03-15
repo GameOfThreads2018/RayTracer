@@ -6,22 +6,22 @@
 class Point3D
 {
 public:
-	double x, y, z;
+	float x, y, z;
 public:
 	Point3D(void);
-	Point3D(const double a);
-	Point3D(double x, double y, double z);
+	Point3D(const float a);
+	Point3D(float x, float y, float z);
 	Point3D(const Point3D& p);
 	~Point3D(void);
 
-	double distance(void);
+	float distance(void);
 
-	inline double dotProduct(const Point3D& p)
+	inline float dotProduct(const Point3D& p)
 	{
 		return x * p.x + y * p.y + z * p.z;
 	}
 
-	inline double dotProduct(const Vector3D& v)
+	inline float dotProduct(const Vector3D& v)
 	{
 		return v.x * x + v.y * y + v.z * z;
 	}
@@ -36,7 +36,7 @@ public:
 		return Point3D(x - p.x, y - p.y, z - p.z);
 	}
 
-	inline Point3D operator*(const double a)
+	inline Point3D operator*(const float a)
 	{
 		return Point3D(x * a, y * a, z * a);
 	}
@@ -50,7 +50,7 @@ public:
 	{
 		return Point3D(x - v.x, y - v.y, z - v.z);
 	}
-	inline double lenSquared(void)
+	inline float lenSquared(void)
 	{
 		return x * x + y * y + z * z;
 	}

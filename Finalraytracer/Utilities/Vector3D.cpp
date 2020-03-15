@@ -7,14 +7,14 @@ Vector3D::Vector3D(void) {
 	z = 0.0;
 }
 
-Vector3D::Vector3D(const double a)
+Vector3D::Vector3D(const float a)
 {
 	x = a;
 	y = a;
 	z = a;
 }
 
-Vector3D::Vector3D(double _x, double _y, double _z)
+Vector3D::Vector3D(float _x, float _y, float _z)
 {
 	x = _x;
 	y = _y;
@@ -30,7 +30,7 @@ Vector3D::Vector3D(const Vector3D& v)
 Vector3D::~Vector3D(void)
 {}
 
-double Vector3D::length(void)
+float Vector3D::length(void)
 {
 	return sqrt(this->lenSquared());
 }

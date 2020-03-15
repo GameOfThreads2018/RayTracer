@@ -3,11 +3,12 @@
 #include "Vector3D.h"
 class Normal
 {
-public: double x, y, z;
+public: float x, y, z;
 public:
 	Normal(void);
-	Normal(double x, double y, double z);
+	Normal(float x, float y, float z);
 	~Normal(void);
+
 	void normalize(void);
 
 	inline Normal operator-(void) const
@@ -25,13 +26,17 @@ public:
 		z += n.z;
 		return *this;
 	}
-	inline Normal operator* (const double a) const
+	inline Normal operator* (const float a) const
 	{
 		return Normal(a * x, a * y, a * z);
 	}
-	inline double dotProduct(const Vector3D& v)
+	inline float dotProduct(const Vector3D& v)
 	{
 		return x * v.x + y * v.y + z * v.z;
+	}
+	inline float lenSquared()
+	{
+		return x * x + y * y + z * z;
 	}
 };
 #endif // !__NORMAL__
