@@ -1,7 +1,7 @@
 #include <math.h>
 #include "Vector3D.h"
 
-Vector3D::Vector3D(void) {
+Vector3D::Vector3D() {
 	x = 0.0;
 	y = 0.0;
 	z = 0.0;
@@ -27,7 +27,7 @@ Vector3D::Vector3D(const Vector3D& v)
 	y = v.y;
 	z = v.z;
 }
-Vector3D::~Vector3D(void)
+Vector3D::~Vector3D()
 {}
 
 float Vector3D::length(void)
@@ -37,6 +37,6 @@ float Vector3D::length(void)
 
 void Vector3D::normalize(void)
 {
-	double magnitude = length();
-	this /= magnitude;
+	const float magnitude = length();
+	*(this)/=magnitude;
 }

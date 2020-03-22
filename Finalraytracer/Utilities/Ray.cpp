@@ -18,6 +18,6 @@ Ray::~Ray()
 
 void Ray::normalize(void)
 {
-	double mag = sqrt(direction.lenSquared);
+	float mag = sqrt(direction.lenSquared());
 	direction /= mag;
 }

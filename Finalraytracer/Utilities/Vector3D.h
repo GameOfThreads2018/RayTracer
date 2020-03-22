@@ -3,17 +3,18 @@
 
 class Vector3D
 {
+
 public:
 	float x, y, z;
 public:
-	Vector3D(void);
+	Vector3D();
 	Vector3D(float a);
 	Vector3D(float _x, float _y, float _z);
 	Vector3D(const Vector3D& v);
-	~Vector3D(void);
+	~Vector3D();
 
-	float length(void);
-	void normalize(void);
+	float length();
+	void normalize();
 
 	inline Vector3D operator+(const Vector3D& vec)
 	{

@@ -1,14 +1,15 @@
 #include "Sphere.h"
+#include "Surface.cpp"
+#include "Utilities/Point3D.cpp"
 
 Sphere::Sphere()
 {
 }
 
-Sphere::Sphere(const Point3D center, const float radius, const float a)
+Sphere::Sphere(const Point3D center, const float radius)
 {
 	setCenter(center);
 	setRadius(radius);
-	this->a = a;
 }
 
 Sphere::~Sphere()
@@ -20,10 +21,10 @@ bool Sphere::hit(Ray& ray)
 	float a, b, c;
 	a = ray.direction.dotProduct(ray.direction);
 	b = 2 * (ray.origin-center).dotProduct(ray.direction);
-	c = (ray.origin-center).dot(ray.origin-center) - radius*radius;
+	c = (ray.origin-center).dotProduct(ray.origin-center) - radius*radius;
 	float discrim = b*b - 4*a*c;
 	float one;
-	one = (float) ((-b-Math.sqrt(discrim ))/(2*a));
+	one = (float) ((-b-sqrt(discrim ))/(2*a));
 	if(one > .00001F)
 	{
 		setT(one);

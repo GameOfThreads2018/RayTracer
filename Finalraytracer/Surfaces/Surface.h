@@ -1,10 +1,12 @@
 #pragma once
 #ifndef __SURFACE__
 #define __SURFACE__
-#include "Utilities/Ray.h"
+#include "Utilities/Ray.cpp"
 class Surface {
-	Surface(void);
-	virtual ~Surface(void);
+
+public:
+	Surface();
+	virtual ~Surface();
 	virtual bool hit(Ray& ray);
 };
 #endif // !__SURFACE__

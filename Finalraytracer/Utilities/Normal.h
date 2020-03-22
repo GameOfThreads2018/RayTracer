@@ -1,6 +1,6 @@
 #ifndef __NORMAL__
 #define __NORMAL__
-#include "Vector3D.h"
+#include "Vector3D.cpp"
 class Normal
 {
 public: float x, y, z;

@@ -3,7 +3,6 @@
 
 #include "Utilities\Point3D.h"
 #include "Utilities\Normal.h"
-#include "Utilities\Ray.h"
 #include "Surface.h"
 class Sphere : public Surface
 {
@@ -13,7 +12,7 @@ private:
 
 public:
 	Sphere();
-	Sphere(const Point3D center, const float radius, const float a);
+	Sphere(const Point3D center, const float radius);
 	~Sphere();
 	virtual bool hit(Ray& ray);
 	void setRadius(float _radius);
