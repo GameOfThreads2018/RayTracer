@@ -12,6 +12,7 @@ private:
 public:
 	Plane();
 	Plane(const Point3D point ,const Normal normal, const float a);
+	~Plane();
 	virtual bool hit(Ray& ray);
 	void setPoint(Point3D _point);
 	void setNormal(Normal _normal);

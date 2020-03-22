@@ -3,27 +3,18 @@
 
 class Vector3D
 {
-public:
-	double x, y, z;
-public:
-	Vector3D(void);
-	Vector3D(double a);
-	Vector3D(double _x, double _y, double _z);
-	Vector3D(const Vector3D& v);
-	~Vector3D(void);
 
-	Vector3D operator+(const Vector3D& vec);
-	Vector3D operator-(const Vector3D& vec);
-	Vector3D operator*(const double a);
-	Vector3D operator/(const double a);
-	Vector3D operator+=(const Vector3D& vec);
-	Vector3D operator-=(const Vector3D& vec);
-	Vector3D operator*=(const double a);
-	Vector3D operator/=(const double a);
-	double dotProduct(const Vector3D& vec);
-	double lenSquared(void);
-	double length(void);
-	void normalize(void);
+public:
+	float x, y, z;
+public:
+	Vector3D();
+	Vector3D(float a);
+	Vector3D(float _x, float _y, float _z);
+	Vector3D(const Vector3D& v);
+	~Vector3D();
+
+	float length();
+	void normalize();
 
 	inline Vector3D operator+(const Vector3D& vec)
 	{
@@ -35,20 +26,14 @@ public:
 		return (Vector3D(x - vec.x, y - vec.y, z - vec.z));
 	}
 
-	inline Vector3D operator*(const double a)
+	inline Vector3D operator*(const float a)
 	{
 		return (Vector3D(x * a, y * a, z * a));
 	}
 
-	inline Vector3D operator/(const double a)
+	inline Vector3D operator/(const float a)
 	{
 		return (Vector3D(x / a, y / a, z / a));
-	}
-
-	inline Vector3D operator+=(const Vector3D& vec)
-	{
-		x += vec.x; y += vec.y; z += vec.z;
-		return (*this);
 	}
 
 	inline Vector3D operator-=(const Vector3D& vec)
@@ -59,27 +44,29 @@ public:
 
 	inline Vector3D operator+=(const Vector3D& vec)
 	{
-		x += vec.x; y += vec.y; z += vec.z;
+		x += vec.x;
+		y += vec.y;
+		z += vec.z;
 		return (*this);
 	}
 
-	inline Vector3D operator*=(const double a)
+	inline Vector3D operator*=(const float a)
 	{
 		x *= a; y *= a; z *= a;
 		return (*this);
 	}
 
-	inline Vector3D operator/=(const double a)
+	inline Vector3D operator/=(const float a)
 	{
 		x /= a; y /= a; z /= a;
 		return (*this);
 	}
 
-	inline double dotProduct(const Vector3D& vec)
+	inline float dotProduct(const Vector3D& vec)
 	{
 		return (x * vec.x + y * vec.y + z * vec.z);
 	}
-	inline double lenSquared(void)
+	inline float lenSquared(void)
 	{
 		return x * x + y * y + z * z;
 	}

@@ -8,7 +8,7 @@ Normal::Normal(void)
 	z = 0;
 }
 
-Normal::Normal(double _x, double _y, double _z)
+Normal::Normal(float _x, float _y, float _z)
 {
 	x = _x;
 	y = _y;
@@ -20,8 +20,6 @@ Normal::~Normal()
 
 void Normal::normalize()
 {
-	double mag = sqrt(x * x + y * y + z * z);
-	x /= mag;
-	y /= mag;
-	z /= mag;
+	float mag = sqrt(this->lenSquared());
+	this* (1 / mag);
 }

@@ -1,14 +1,15 @@
 #include "Surface.h"
-Surface::Surface(void)
-{
 
-}
 Surface::Surface()
 {
 
 }
-
-Surface::~Surface(void)
+Surface::~Surface()
 {
-
 }
+
+bool Surface::hit(Ray& ray)
+{
+	return false;
+}
+
