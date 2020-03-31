@@ -1,42 +1,44 @@
 #include "Plane.h"
+#include "Surface.h"
+#include "Utilities/Point3D.h"
+
 Plane::Plane()
 {
 }
 
-Plane::Plane(const Point3D _point, const Normal& _normal, const float _a)
+Plane::Plane(const Point3D _point, const Normal _normal)
 {
 	setPoint(_point);
 	setNormal(_normal);
-	a =_a;
 }
 
 Plane::~Plane()
 {
 }
 
-void Plane::setNormal(const Normal normal)
+void Plane::setNormal(const Normal _normal)
 {
-	this->normal = normal;
+	normal = _normal;
 }
 
-void Plane::setPoint(const Point3D point)
+void Plane::setPoint(const Point3D _point)
 {
-	this->point = point;
+	point = point;
 }
 
 Normal Plane::getNormal() const
 {
-	return this->normal;
+	return normal;
 }
 
-Point3D Plane::getPoint()
+Point3D Plane::getPoint() const
 {
-	return this->point;
+	return point;
 }
 
 bool Plane::hit(Ray& ray)
 {
-	int d = (point-ray.origin).dotProduct(normal)/(normal.dotProduct(ray.direction));
+	float d = (point-ray.origin).dotProduct(normal)/(normal.dotProduct(ray.direction));
 	if(d > .00001F)
 	{
 		return true;

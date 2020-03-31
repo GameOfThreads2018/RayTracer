@@ -1,6 +1,7 @@
 #include "Sphere.h"
-#include "Surface.cpp"
-#include "Utilities/Point3D.cpp"
+#include "Surface.h"
+#include "Utilities/Point3D.h"
+#include "Utilities/Ray.h"
 
 Sphere::Sphere()
 {
@@ -23,8 +24,7 @@ bool Sphere::hit(Ray& ray)
 	b = 2 * (ray.origin-center).dotProduct(ray.direction);
 	c = (ray.origin-center).dotProduct(ray.origin-center) - radius*radius;
 	float discrim = b*b - 4*a*c;
-	float one;
-	one = (float) ((-b-sqrt(discrim ))/(2*a));
+	float one = (float) ((-b-sqrt(discrim ))/(2*a));
 	if(one > .00001F)
 	{
 		setT(one);

@@ -2,6 +2,7 @@
 #define __POINT_3D__
 
 #include "Vector3D.h"
+#include "Normal.h"
 
 class Point3D
 {
@@ -25,7 +26,10 @@ public:
 	{
 		return v.x * x + v.y * y + v.z * z;
 	}
-
+	inline float dotProduct(const Normal& n)
+	{
+		return n.x * x + n.y * y + n.z * z;
+	}
 	inline Point3D operator+(const Point3D& p)
 	{
 		return Point3D(x + p.x, y + p.y, z + p.z);

@@ -38,5 +38,7 @@ float Vector3D::length(void)
 void Vector3D::normalize(void)
 {
 	const float magnitude = length();
-	*(this)/=magnitude;
+	x /= magnitude;
+	y /= magnitude;
+	z /= magnitude;
 }
