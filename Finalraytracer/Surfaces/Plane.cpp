@@ -1,6 +1,6 @@
+#include <math.h>
 #include "Plane.h"
 #include "Surface.h"
-#include "Utilities/Point3D.h"
 
 Plane::Plane()
 {
@@ -23,7 +23,7 @@ void Plane::setNormal(const Normal _normal)
 
 void Plane::setPoint(const Point3D _point)
 {
-	point = point;
+	point = _point;
 }
 
 Normal Plane::getNormal() const
@@ -39,7 +39,7 @@ Point3D Plane::getPoint() const
 bool Plane::hit(Ray& ray)
 {
 	float d = (point-ray.origin).dotProduct(normal)/(normal.dotProduct(ray.direction));
-	if(d > .00001F)
+	if(d < .00001F)
 	{
 		return true;
 	}
