@@ -1,7 +1,7 @@
 #pragma once
 #ifndef __SURFACE__
 #define __SURFACE__
-#include "Utilities/Ray.cpp"
+#include "Utilities/Ray.h"
 class Surface {
 
 public:

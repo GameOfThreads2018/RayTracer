@@ -21,5 +21,7 @@ Normal::~Normal()
 void Normal::normalize()
 {
 	float mag = sqrt(this->lenSquared());
-	this* (1 / mag);
+	x /= mag;
+	y /= mag;
+	z /= mag;
 }
