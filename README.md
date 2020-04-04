@@ -1,4 +1,4 @@
-# RayTracer
+# Raytracer
 
 An implementation of the Raytracing algorithm in C++ based in Visual Studio IDE. The main scene consists of three spheres of different colors on top a plane. Overall project is still a work in progress
 
