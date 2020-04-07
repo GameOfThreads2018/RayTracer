@@ -9,6 +9,6 @@ An implementation of the Raytracing algorithm in C++ based in Visual Studio IDE.
 - **Surfaces**: this folder contains .h and .cpp files for Sphere and Plane objects.
 
 **Intended Output**
--Pixel values are outputted to render.ppm. You can download GIMP or any other graphics editor to view .ppm files generated for this project.
+- Pixel values are outputted to render.ppm. You can download GIMP or any other graphics editor to view .ppm files generated for this project.
 For this project I personally used GIMP, the link provided below.
 https://www.gimp.org/downloads/
