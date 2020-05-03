@@ -33,7 +33,7 @@
 
 class Color {
 public:
-    Color(void);
+    Color();
     Color(unsigned char red, unsigned char green, unsigned char blue);
     Color(COLORREF);
     Color(const std::string&);

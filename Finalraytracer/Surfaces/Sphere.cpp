@@ -5,12 +5,16 @@
 
 Sphere::Sphere()
 {
+	center = Point3D();
+	radius = 1.0F;
+	t = 0.0F;
 }
 
 Sphere::Sphere(const Point3D center, const float radius)
 {
 	setCenter(center);
 	setRadius(radius);
+	t = 0.0F;
 }
 
 Sphere::~Sphere()
@@ -20,9 +24,9 @@ Sphere::~Sphere()
 bool Sphere::hit(Ray& ray)
 {
 	float a, b, c;
-	a = ray.direction.dotProduct(ray.direction);
-	b = 2 * (ray.origin-center).dotProduct(ray.direction);
-	c = (ray.origin-center).dotProduct(ray.origin-center) - radius*radius;
+	a = ray.getDirection().dotProduct(ray.getDirection());
+	b = 2 * (ray.getOrigin()-center).dotProduct(ray.getDirection());
+	c = (ray.getOrigin()-center).dotProduct(ray.getOrigin()-center) - radius*radius;
 	float discrim = b*b - 4*a*c;
 	float one = (float) ((-b-sqrt(discrim ))/(2*a));
 	if(one > .00001F)
@@ -71,4 +75,13 @@ float Sphere::getT()
 	return this->t;
 }
 
+Vector3D Sphere::calculateInersectPoint(Ray& ray)
+{
+	return ray.getDirection() * t + Vector3D(ray.getOrigin().x, ray.getOrigin().y, ray.getDirection().z);
+}
 
+Vector3D Sphere::calculateNormal(Ray& ray)
+{
+	Vector3D normal = calculateInersectPoint(ray) - Vector3D(this->getCenter().x, this->getCenter().y, this->getCenter().z);
+	return normal;
+} 

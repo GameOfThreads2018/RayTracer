@@ -19,5 +19,15 @@ Ray::~Ray()
 void Ray::normalize(void)
 {
 	float mag = sqrt(direction.lenSquared());
-	direction /= mag;
+	direction/= mag;
+}
+
+Vector3D Ray::getDirection()
+{
+	return this->direction;
+}
+
+Point3D Ray::getOrigin()
+{
+	return this->origin;
 }

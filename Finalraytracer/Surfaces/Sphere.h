@@ -2,12 +2,12 @@
 #define __SPHERE__
 
 #include "Utilities\Point3D.h"
-#include "Utilities\Normal.h"
+#include "Utilities\Vector3D.h"
 #include "Surface.h"
 class Sphere : public Surface
 {
 private:
-	float radius, a, t;
+	float radius, t;
 	Point3D center;
 
 public:
@@ -21,5 +21,8 @@ public:
 	float getT();
 	float getRadius() const;
 	Point3D getCenter() const;
+	Vector3D calculateInersectPoint(Ray& ray);
+	Vector3D calculateNormal(Ray& ray);
+
 };
 #endif

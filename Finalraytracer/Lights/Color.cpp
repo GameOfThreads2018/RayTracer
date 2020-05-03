@@ -26,7 +26,7 @@
 
 #include "Color.h"
 
-Color::Color(void)
+Color::Color()
 {
     color_ = RGB(0xFF, 0xFF, 0xFF);
 }

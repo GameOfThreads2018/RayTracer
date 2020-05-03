@@ -27,12 +27,24 @@ Vector3D::Vector3D(const Vector3D& v)
 	y = v.y;
 	z = v.z;
 }
+
 Vector3D::~Vector3D()
 {}
 
 float Vector3D::length(void)
 {
 	return sqrt(this->lenSquared());
+}
+
+Vector3D& Vector3D::operator= (const Vector3D& rhs) {
+	if (this == &rhs)
+	{
+		return (*this);
+	}
+
+	x = rhs.x; y = rhs.y; z = rhs.z;
+
+	return (*this);
 }
 
 void Vector3D::normalize(void)

@@ -1,6 +1,8 @@
 #ifndef __VECTOR_3D__
 #define __VECTOR_3D__
 
+#include "Point3D.h"
+
 class Vector3D
 {
 
@@ -12,9 +14,9 @@ public:
 	Vector3D(float _x, float _y, float _z);
 	Vector3D(const Vector3D& v);
 	~Vector3D();
-
 	float length();
 	void normalize();
+	Vector3D& operator= (const Vector3D& rhs);
 
 	inline Vector3D operator+(const Vector3D& vec)
 	{
@@ -64,8 +66,9 @@ public:
 
 	inline float dotProduct(const Vector3D& vec)
 	{
-		return (x * vec.x + y * vec.y + z * vec.z);
+		return x * vec.x + y * vec.y + z * vec.z;
 	}
+
 	inline float lenSquared(void)
 	{
 		return x * x + y * y + z * z;

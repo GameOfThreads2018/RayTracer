@@ -5,7 +5,7 @@
 #include "Point3D.h"
 
 class Ray {
-public:
+private:
     Point3D origin;
     Vector3D direction;
 public:
@@ -14,7 +14,8 @@ public:
     ~Ray(void);
 
     void normalize(void);
-
+    Vector3D getDirection();
+    Point3D getOrigin();
 };
 #endif // !__RAY__
 

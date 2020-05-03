@@ -1,9 +1,9 @@
 #ifndef __LIGHT__
 #define __LIGHT__
 
-#include "Vector3D.h"
+#include "Utilities/Vector3D.h"
 #include "Color.h"
-#include "Point3D.h"
+#include "Utilities/Point3D.h"
 
 
 class Light
@@ -15,9 +15,11 @@ public:
 
 public:
     Light(void);
-    Light(Point3D origin, Vector3D direction);
-    Light(Point3D origin, Vector3D direction, Color color);
-    Light(const Light& l);
+    Light(const Point3D& origin, const Vector3D& direction);
+    Light(const Point3D& origin, const Vector3D& direction, const Color& color);
+    Light operator=(const Light& l);
+    ~Light();
+    void normalize();
 };
 
 #endif
