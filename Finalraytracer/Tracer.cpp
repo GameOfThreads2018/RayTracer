@@ -10,10 +10,12 @@
 #include "Lights/Light.cpp"
 
 using namespace std;
+
 // Window dimensions
 const int WIDTH = 512, HEIGHT = 512;
 
 Vector3D shade(Ray& ray, Sphere& redSphere, Sphere& greenSphere, Sphere& blueSphere, Plane& plane);
+void ceiling(Vector3D& v);
 
 int main()
 {
@@ -48,7 +50,7 @@ int main()
 
 			Ray viewingRay = Ray(Point3D(), Vector3D(u, v, -.1F));
 			Vector3D result = shade(viewingRay, redSphere, greenSphere, blueSphere, plane);
-			outfile << result.x * 255 << " " << result.y *255 << " " << result.z *255 << "\n";
+			outfile << result.x * 255.0F << " " << result.y * 255.0F << " " << result.z * 255.0F << "\n";
 		}
 	}
 }
@@ -73,7 +75,9 @@ int main()
 			Vector3D h = ray.getDirection() - light.direction;
 			h.normalize();
 			Ls = ks * powf(surface_normal.dotProduct(h), 0);
-			return (Ld +Ls);
+			Vector3D L = Ld + Ls + ka;
+			ceiling(L);
+			return L;
 		}
 		
 		
@@ -93,8 +97,11 @@ int main()
 			Vector3D h = ray.getDirection() - light.direction;
 			h.normalize();
 			Ls = ks * powf(surface_normal.dotProduct(h), 32);
-			return (Ld + Ls);
+			Vector3D L = Ld + Ls + ka;
+			ceiling(L);
+			return L;
 		}
+		
 		else if (blueSphere.hit(ray))
 		{
 			Vector3D ka = Vector3D(0.0F, 0.0F, 0.2F);
@@ -111,7 +118,9 @@ int main()
 			Vector3D h = ray.getDirection() - light.direction;
 			h.normalize();
 			Ls = ks * powf(surface_normal.dotProduct(h), 0);
-			return (Ld + Ls);
+			Vector3D L = Ld + Ls + ka;
+			ceiling(L);
+			return L;
 		}
 		
 		if (plane.hit(ray))
@@ -130,7 +139,9 @@ int main()
 			Vector3D h = ray.getDirection() - light.direction;
 			h.normalize();
 			Ls = ks * powf(surface_normal.dotProduct(h), 0);
-			return (Ld + Ls);
+			Vector3D L = Ld + Ls + ka;
+			ceiling(L);
+			return L;
 		}
 		
 		else
@@ -138,3 +149,12 @@ int main()
 			return Vector3D();
 		}
 	}
+
+	//cap all color components to the value 1
+	void ceiling(Vector3D& v)
+	{
+		v.x = fminf(1.0F, v.x);
+		v.y = fminf(1.0F, v.y);
+		v.z = fminf(1.0F, v.z);
+	}
+
