@@ -4,7 +4,7 @@ An object oriented approach of implementing the raytracing algorithm in C++, bas
 
 **Project Structure**
 
-- **Utilities**: This is the backbone of the project, most of the abstraction for the 3D math involved with the raytracer lives here. Because of the constant use of classes in the folder judicious use of inlining was used. 
+- **Utilities**: This is the backbone of the project, most of the abstraction for the 3D math involved with the raytracer lives here.  
 - **Lights**: Color implementation taken off of the internet, sources are included in the file's comments.
 
 **Intended Output**
@@ -16,5 +16,5 @@ https://www.gimp.org/downloads/
 **Current Features**
 
 - Sphere and Plane rendering
-- Blinn-Phong illumination model supported in Tracer.cpp
-- Basic lighting supported
+- Blinn-Phong illumination model
+- Lighting and shadows included
