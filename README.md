@@ -18,3 +18,4 @@ https://www.gimp.org/downloads/
 - Sphere and Plane rendering
 - Blinn-Phong illumination model
 - Lighting and shadows included
+- Reflections
