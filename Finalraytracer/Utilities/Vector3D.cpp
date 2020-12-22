@@ -54,3 +54,8 @@ void Vector3D::normalize(void)
 	y /= magnitude;
 	z /= magnitude;
 }
+
+ Point3D convert(Vector3D& v)
+{
+	return Point3D(v.x, v.y, v.z);
+}
