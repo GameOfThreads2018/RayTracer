@@ -23,22 +23,25 @@ Sphere::~Sphere()
 
 bool Sphere::hit(Ray& ray)
 {
-	float a, b, c;
+	float a, b, c, t0, t1;
 	a = ray.getDirection().dotProduct(ray.getDirection());
 	b = 2 * (ray.getOrigin()-center).dotProduct(ray.getDirection());
 	c = (ray.getOrigin()-center).dotProduct(ray.getOrigin()-center) - radius*radius;
 	float discrim = b*b - 4*a*c;
-	float one = (float) ((-b-sqrt(discrim ))/(2*a));
-	if(one > .00001F)
+	t0 = (float) ((-b - sqrt(discrim))/(2*a));
+	t1 = (float)((-b + sqrt(discrim)) / (2 * a));
+	if (t0 > t1)
 	{
-		setT(one);
+		setT(t1);
 	}
-
+	else
+	{
+		setT(t0);
+	}
 	if(discrim >= 0)
 	{
 		return true;
 	}
-
 	else 
 	{
 		return false;
